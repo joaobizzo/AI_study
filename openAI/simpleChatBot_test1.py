@@ -11,9 +11,9 @@ sentence = str(input('Chat: '))
 response = openai.Completion.create(
     prompt=sentence,
     model=model,
-    max_tokens=800,
-    temperature=0.4,
-    n=2
+    max_tokens=800, #more tokens, more words, more $$
+    temperature=0.4, # ai "creativity" level: 0 to 1
+    n=1 # number of results
 )
 
 for result in response.choices:
