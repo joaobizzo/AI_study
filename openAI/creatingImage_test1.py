@@ -26,7 +26,7 @@ def generate_image(prompt, num_image=1, size='512x512', output_format='url'):
                 images.append(image.url)
         elif output_format == 'b64_json':
             for image in response['data']:
-                images.append(image.json)
+                images.append(image.b64_json)
         return {'created': datetime.datetime.fromtimestamp(response['created']), 'images': images}
     except InvalidRequestError as e:
         print(e)
@@ -38,7 +38,7 @@ openai.api_key = API_KEY
 SIZES = ('1024x1024', '512x512', '256x256')
 
 prompt = str(input('Input: '))
-choice = int(input('Press 0 to URL and 1 to JPG'))
+choice = int(input('Enter 0 to URL and 1 to save as JPG: '))
 if choice == 0:
     # URL image
     response = generate_image(prompt, num_image=2, size=SIZES[1])
@@ -46,7 +46,7 @@ if choice == 0:
     print(timestamp)
     for image in response['images']:
         webbrowser.open(image)
-elif choice == 1: 
+elif choice == 1:
     # save image
     response = generate_image(prompt, num_image=2, size=SIZES[1], output_format='b64_json')
     prefix = 'demo'
