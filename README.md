@@ -39,3 +39,5 @@ If you wish to contribute to this repository, please fork the repository, make y
 
 ## Conclusion
 This repository serves as a starting point for anyone interested in using the OpenAI API for text and image tasks. The code in this repository can be used as a reference for your own projects.
+
+### Any questions: be free to contact me
