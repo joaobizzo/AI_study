@@ -20,6 +20,7 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False, n
 
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
+#Define the CNN architectur
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
