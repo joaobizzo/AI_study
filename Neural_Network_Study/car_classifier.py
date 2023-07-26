@@ -46,6 +46,7 @@ net = Net()
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
+#Train the model:
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 net.to(device)
 
