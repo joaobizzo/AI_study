@@ -68,6 +68,7 @@ for epoch in range(10):  # Adjust the number of epochs as needed
 
 print("Training finished.")
 
+#Test the model:
 correct = 0
 total = 0
 with torch.no_grad():
